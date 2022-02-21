@@ -73,6 +73,8 @@ function noteOffEvent(channel, pitch, velocity)
 function ccEvent(channel, number, value)
 {
 	script.log("ControlChange received "+channel+", "+number+", "+value);
+	i = number;
+	local.values.knobs.getChild("K" + i).set(value);
 }
 
 function sysExEvent(data)
